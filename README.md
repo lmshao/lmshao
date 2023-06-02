@@ -16,10 +16,3 @@ Here are some ideas to get you started:
 -->
 
 <img align="center" src="https://github-readme-stats.vercel.app/api?username=lmshao&show_icons=true&icon_color=CE1D2D&text_color=718096&bg_color=ffffff&hide_title=true" />
-
-## 软件推荐
-
-|软件|类型|说明|
-:---:|:---:|---
-[PotPlayer](https://potplayer.daum.net/)|本地视频播放器|无广告全能播放器
-[Joplin](https://joplinapp.org/)|笔记软件|全平台开源笔记软件，可绑定云服务在线同步
