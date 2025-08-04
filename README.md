@@ -15,13 +15,9 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 
-[![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=lmshao&show_icons=true&icon_color=CE1D2D&text_color=718096&bg_color=ffffff&hide_title=true)](https://github.com/anuraghazra/github-readme-stats)
-
-[![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=anuraghazra&layout=donut&hide_title=true)](https://github.com/anuraghazra/github-readme-stats)
-
 <a href="https://github.com/anuraghazra/github-readme-stats">
-  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api?username=anuraghazra&show_icons=true&icon_color=CE1D2D&text_color=718096&bg_color=ffffff" />
+  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api?username=lmshao&show_icons=true&icon_color=CE1D2D&text_color=718096&bg_color=ffffff" />
 </a>
 <a href="https://github.com/anuraghazra/convoychat">
-  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=anuraghazra&layout=compact&langs_count=5" />
+  <img height=200 align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=lmshao&layout=donut&langs_count=5" />
 </a>
