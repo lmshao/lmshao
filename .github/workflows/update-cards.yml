@@ -1,0 +1,59 @@
+name: Update README cards
+
+on:
+  # 本文件或 README 变更时自动跑一次，省去手动首次触发
+  # paths-ignore 兜住 bot 自己提交的 SVG，避免递归触发
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - "profile/**"
+  # 每天 00:00 北京时间（UTC+8）
+  schedule:
+    - cron: "0 16 * * *"
+  # 需要立刻刷新时，到 Actions 页面手动点一下
+  workflow_dispatch:
+
+# 上一次还没跑完就跳过本次，避免排队堆积
+concurrency:
+  group: readme-cards
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Generate stats card
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: stats
+          # 参数与原 URL 完全一致，视觉效果不变
+          options: username=${{ github.repository_owner }}&show_icons=true&icon_color=CE1D2D&text_color=718096&bg_color=ffffff&hide_border=true&rank_icon=github
+          path: profile/stats.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate top languages card
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: top-langs
+          options: username=${{ github.repository_owner }}&layout=compact&hide_border=true
+          path: profile/top-langs.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit cards
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add profile/*.svg
+          if git diff --staged --quiet; then
+            echo "卡片内容无变化，跳过提交"
+            exit 0
+          fi
+          git commit -m "chore: update README cards [skip ci]"
+          git push
